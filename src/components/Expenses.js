@@ -20,6 +20,7 @@ function Expenses(props){
           date={expenses.date} 
           amount={expenses.amount}>
           </ExpenseItem>
+          
         ))}     
       </Card>
     </div>
