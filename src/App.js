@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Expenses from "./components/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+function App(){
+  const data=[
+    {title:'movie tickets',date:new Date(2021,4,16),amount:23.5},
+    {title:'laundry',date:new Date(2021,1,6),amount:45},
+    {title:'laptop',date:new Date(2021,8,23),amount:560.55},
+    {title:'travelling',date:new Date(2021,5,19),amount:786.23},
+    {title:'study react',date:new Date(2021,11,21),amount:135.60}
+  ]
+
+  function getNewExpenseHandler(newExpenseData){
+    console.log(newExpenseData);
+  }
+
+  return(
+    <div>
+      <NewExpense onGetNewExpenseData = {getNewExpenseHandler}></NewExpense>
+      <Expenses expenses={data}></Expenses>
     </div>
   );
 }
